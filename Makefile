@@ -8,6 +8,12 @@
 CFLAGS   =	-W -Wall -Werror -Wextra
 CPPFLAGS =	-I./include
 
+CSFML =	-lcsfml-graphics \
+		-lcsfml-network \
+		-lcsfml-window \
+		-lcsfml-system \
+		-lcsfml-audio
+
 SRC =	src/main.c
 OBJ	=	$(SRC:.c=.o)
 
@@ -18,7 +24,7 @@ NAME =	my_paint
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME) $(CSFML)
 
 clean:
 	$(RM) $(OBJ)
