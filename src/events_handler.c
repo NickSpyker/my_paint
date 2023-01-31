@@ -6,61 +6,86 @@
 */
 
 #include "singleton.h"
+#include "events.h"
 
-void window_events(sfEventType event)
+static void window_events(sfEventType event)
 {
-    data_t *data = get_data();
-
     switch (event) {
         case sfEvtClosed:
-            sfRenderWindow_close(data->window);
+            closed();
+            break;
         case sfEvtResized:
+            resized();
+            break;
         case sfEvtLostFocus:
+            lost_focus();
+            break;
         case sfEvtGainedFocus:
+            gained_focus();
+            break;
         default:
             break;
     }
 }
 
-void mouse_events(sfEventType event)
+static void mouse_events(sfEventType event)
+{
+    switch (event) {
+        case sfEvtMouseButtonPressed:
+            mouse_button_pressed();
+            break;
+        case sfEvtMouseButtonReleased:
+            mouse_button_released();
+            break;
+        case sfEvtMouseMoved:
+            mouse_moved();
+            break;
+        case sfEvtMouseEntered:
+            mouse_entered();
+            break;
+        case sfEvtMouseLeft:
+            mouse_left();
+            break;
+        default:
+            break;
+    }
+}
+
+static void keyboard_events(sfEventType event)
+{
+    switch (event) {
+        case sfEvtKeyPressed:
+            key_pressed();
+            break;
+        case sfEvtKeyReleased:
+            key_released();
+            break;
+        case sfEvtTouchBegan:
+            touch_began();
+            break;
+        case sfEvtTouchMoved:
+            touch_moved();
+            break;
+        case sfEvtTouchEnded:
+            touch_ended();
+            break;
+        default:
+            break;
+    }
+}
+
+static void because_we_have_to_respect_the_coding_style(sfEventType event)
 {
     switch (event) {
         case sfEvtMouseWheelMoved:
+            mouse_wheel_moved();
+            break;
         case sfEvtMouseWheelScrolled:
-        case sfEvtMouseButtonPressed:
-        case sfEvtMouseButtonReleased:
-        case sfEvtMouseMoved:
-        case sfEvtMouseEntered:
-        case sfEvtMouseLeft:
-        default:
+            mouse_wheel_scrolled();
             break;
-    }
-}
-
-void joystick_events(sfEventType event)
-{
-    switch (event) {
-        case sfEvtJoystickButtonPressed:
-        case sfEvtJoystickButtonReleased:
-        case sfEvtJoystickMoved:
-        case sfEvtJoystickConnected:
-        case sfEvtJoystickDisconnected:
-        default:
-            break;
-    }
-}
-
-void other_events(sfEventType event)
-{
-    switch (event) {
         case sfEvtTextEntered:
-        case sfEvtKeyPressed:
-        case sfEvtKeyReleased:
-        case sfEvtTouchBegan:
-        case sfEvtTouchMoved:
-        case sfEvtTouchEnded:
-        case sfEvtSensorChanged:
-        case sfEvtCount:
+            text_entered();
+            break;
         default:
             break;
     }
@@ -70,6 +95,6 @@ void events_handler(sfEventType event)
 {
     window_events(event);
     mouse_events(event);
-    joystick_events(event);
-    other_events(event);
+    keyboard_events(event);
+    because_we_have_to_respect_the_coding_style(event);
 }

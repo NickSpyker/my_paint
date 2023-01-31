@@ -19,7 +19,24 @@ SRC =	src/main.c \
 		src/setup.c \
 		src/teardown.c \
 		src/events_handler.c \
-		src/time_handler.c
+		src/time_handler.c \
+		src/events/closed.c \
+        src/events/resized.c \
+        src/events/lost_focus.c \
+        src/events/gained_focus.c \
+        src/events/text_entered.c \
+        src/events/key_pressed.c \
+        src/events/key_released.c \
+        src/events/mouse_wheel_moved.c \
+        src/events/mouse_wheel_scrolled.c \
+        src/events/mouse_button_pressed.c \
+        src/events/mouse_button_released.c \
+        src/events/mouse_moved.c \
+        src/events/mouse_entered.c \
+        src/events/mouse_left.c \
+        src/events/touch_began.c \
+        src/events/touch_moved.c \
+        src/events/touch_ended.c
 
 OBJ	=	$(SRC:.c=.o)
 
