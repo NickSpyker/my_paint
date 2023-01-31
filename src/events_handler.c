@@ -5,7 +5,7 @@
 ** events_handler.c
 */
 
-#include "singleton.h"
+#include <SFML/Graphics.h>
 #include "events.h"
 
 static void window_events(sfEventType event)
