@@ -13,7 +13,7 @@ OBJ = $(SRC:.c=.o)
 
 NAME = my_paint
 
-.PHONY: all $(NAME) clean fclean re
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
