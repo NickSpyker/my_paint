@@ -5,7 +5,7 @@
 ## Makefile
 ##
 
-CFLAGS   =	-W -Wall -Werror -Wextra
+CFLAGS   =	-g3 -W -Wall -Werror -Wextra
 CPPFLAGS =	-I./include
 
 CSFML =	-lcsfml-graphics \
@@ -14,7 +14,13 @@ CSFML =	-lcsfml-graphics \
 		-lcsfml-system \
 		-lcsfml-audio
 
-SRC =	src/main.c
+SRC =	src/main.c \
+		src/singleton.c \
+		src/setup.c \
+		src/teardown.c \
+		src/events_handler.c \
+		src/time_handler.c
+
 OBJ	=	$(SRC:.c=.o)
 
 NAME =	my_paint
