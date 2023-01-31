@@ -14,5 +14,8 @@ void teardown(void)
 
     sfClock_destroy(data->clock);
     sfRenderWindow_destroy(data->window);
+    sfFont_destroy(data->font.bold);
+    sfFont_destroy(data->font.medium);
+    sfFont_destroy(data->font.regular);
     free(data);
 }

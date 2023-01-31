@@ -10,10 +10,22 @@
 
     #include <SFML/Graphics.h>
 
+typedef enum state_e {
+    HOME
+} state_t;
+
+typedef struct font_s {
+    sfFont *bold;
+    sfFont *medium;
+    sfFont *regular;
+} font_t;
+
 typedef struct data_s {
     sfRenderWindow *window;
     sfClock *clock;
     sfEvent event;
+    state_t state;
+    font_t font;
     float dt;
 } data_t;
 

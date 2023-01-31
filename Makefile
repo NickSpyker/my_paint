@@ -5,7 +5,7 @@
 ## Makefile
 ##
 
-CFLAGS   =	-g3 -W -Wall -Werror -Wextra
+CFLAGS   =	-W -Wall -Werror -Wextra
 CPPFLAGS =	-I./include
 
 CSFML =	-lcsfml-graphics \
