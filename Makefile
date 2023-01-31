@@ -37,7 +37,8 @@ SRC =	src/main.c \
         src/events/touch_began.c \
         src/events/touch_moved.c \
         src/events/touch_ended.c \
-        src/reference_frame.c
+        src/reference_frame.c \
+        src/canvas.c
 
 OBJ	=	$(SRC:.c=.o)
 

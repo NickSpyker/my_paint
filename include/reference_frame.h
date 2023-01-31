@@ -10,7 +10,12 @@
 
     #include <SFML/Graphics.h>
 
-sfVector2f position_relative_to(sfVector2f reference, sfVector2f pos);
-sfVector2f reference_position(sfVector2f reference, sfVector2f pos);
+typedef struct ref_rect_s {
+    unsigned int z_index;
+    sfFloatRect ref_rect;
+    sfFloatRect abs_rect;
+} ref_rect_t;
+
+void set_position_relative_to(ref_rect_t reference, ref_rect_t pos);
 
 #endif // !MY_PAINT_REFERENCE_FRAME_H

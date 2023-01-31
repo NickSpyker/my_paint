@@ -7,20 +7,8 @@
 
 #include "reference_frame.h"
 
-sfVector2f position_relative_to(sfVector2f reference, sfVector2f pos)
+void set_position_relative_to(ref_rect_t reference, ref_rect_t pos)
 {
-    sfVector2f result;
-
-    result.x = reference.x + pos.x;
-    result.y = reference.y + pos.y;
-    return result;
-}
-
-sfVector2f reference_position(sfVector2f reference, sfVector2f pos)
-{
-    sfVector2f result;
-
-    result.x = reference.x - pos.x;
-    result.y = reference.y - pos.y;
-    return result;
+    pos.abs_rect.left = reference.abs_rect.left + pos.ref_rect.left;
+    pos.abs_rect.top = reference.abs_rect.top + pos.ref_rect.top;
 }
