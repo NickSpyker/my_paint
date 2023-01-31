@@ -5,13 +5,13 @@
 ## Makefile
 ##
 
-CFLAGS = -W -Wall -Werror -Wextra
-CPPFLAGS = -I./include
+CFLAGS   =	-W -Wall -Werror -Wextra
+CPPFLAGS =	-I./include
 
 SRC =	src/main.c
-OBJ = $(SRC:.c=.o)
+OBJ	=	$(SRC:.c=.o)
 
-NAME = my_paint
+NAME =	my_paint
 
 .PHONY: all clean fclean re
 
