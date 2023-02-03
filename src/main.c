@@ -5,7 +5,6 @@
 ** main.c
 */
 
-#include <stdio.h>
 #include "singleton.h"
 
 void setup(void);
