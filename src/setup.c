@@ -13,4 +13,5 @@ void setup(void)
     sfVideoMode mode = {1536, 864, 32};
 
     ins->window = sfRenderWindow_create(mode, "My Paint", sfClose | sfResize, NULL);
+    ins->clock =  sfClock_create();
 }

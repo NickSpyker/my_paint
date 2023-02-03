@@ -42,7 +42,8 @@ SRC =	src/main.c \
         src/events/touch_moved.c \
         src/events/touch_ended.c \
         src/events/sensor_changed.c \
-        src/events/count.c
+        src/events/count.c \
+        src/time_handler.c
 
 OBJ	=	$(SRC:.c=.o)
 

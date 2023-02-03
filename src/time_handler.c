@@ -2,16 +2,14 @@
 ** EPITECH PROJECT, 2022
 ** nicolas.spijkerman@epitech.eu
 ** File description:
-** teardown.c
+** time_handler.c
 */
 
 #include "singleton.h"
 
-void teardown(void)
+void update_delta_time(void)
 {
     instance_t *ins = get_instance();
 
-    sfRenderWindow_destroy(ins->window);
-    sfClock_destroy(ins->clock);
-    destroy_instance();
+    ins->dt = sfTime_asSeconds(sfClock_restart(ins->clock));
 }
