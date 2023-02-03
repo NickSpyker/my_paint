@@ -10,11 +10,18 @@
 
     #include <SFML/Graphics.h>
 
+typedef struct colors_s {
+    sfColor bg;
+    sfColor txt;
+} colors_t;
+
 typedef struct instance_s {
     sfRenderWindow *window;
     sfEvent event;
     sfClock *clock;
     float dt;
+    sfRenderTexture *frame_buffer;
+    colors_t *colors;
 } instance_t;
 
 instance_t *get_instance(void);

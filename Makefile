@@ -18,7 +18,7 @@ SRC =	src/main.c \
 		src/singleton.c \
 		src/setup.c \
 		src/teardown.c \
-		src/events_handler.c \
+		src/handlers/events.c \
 		src/events/closed.c \
         src/events/resized.c \
         src/events/lost_focus.c \
@@ -43,7 +43,10 @@ SRC =	src/main.c \
         src/events/touch_ended.c \
         src/events/sensor_changed.c \
         src/events/count.c \
-        src/time_handler.c
+        src/handlers/time.c \
+        src/views/home/init.c \
+        src/views/home/update.c \
+        src/views/home/destroy.c
 
 OBJ	=	$(SRC:.c=.o)
 

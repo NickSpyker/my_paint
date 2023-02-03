@@ -19,10 +19,10 @@ int main(void)
     setup();
     while (sfRenderWindow_isOpen(ins->window)) {
         update_delta_time();
-        sfRenderWindow_clear(ins->window, sfBlack);
         if (sfRenderWindow_pollEvent(ins->window, &ins->event)) {
             events_handler(ins->event.type);
         }
+        sfRenderWindow_clear(ins->window, ins->colors->bg);
         sfRenderWindow_display(ins->window);
     }
     teardown();

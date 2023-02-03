@@ -14,6 +14,7 @@ instance_t *get_instance(void)
 
     if (instance == NULL) {
         instance = malloc(sizeof(instance_t));
+        instance->colors = malloc(sizeof(colors_t));
     }
     return instance;
 }
@@ -22,5 +23,6 @@ void destroy_instance(void)
 {
     instance_t *instance = get_instance();
 
+    free(instance->colors);
     free(instance);
 }
